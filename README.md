@@ -56,6 +56,13 @@ module.exports = {
     'database': 'mongodb://localhost:27017/ng4-realtime-chat'
 };
 ```
+If you change server address or port (default `localhost`, port `3000`) you need enable cross-origin resource sharing in `/server/server.js` on lines 29-33.
+```JavaScript
+server.use(cors({
+  origin: 'http://localhost:4200',
+  preflightContinue: true
+}));
+```
 
 ### Client side
 The config variables located in `/client/src/app/app.config.ts`.
