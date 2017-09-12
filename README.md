@@ -2,6 +2,7 @@
 A real-time chat with multiple rooms and user authentication build on websockets.
 
 ## Example screenshots
+![demo](https://user-images.githubusercontent.com/23633235/30330761-3c567000-97d6-11e7-9d9e-a9f919f228b4.gif)
 
 ## Built with
 * Client side
