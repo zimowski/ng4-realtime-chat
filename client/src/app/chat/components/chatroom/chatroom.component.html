@@ -1,0 +1,82 @@
+<div class="box">
+  <md-card>
+    <md-sidenav-container fullscreen>
+      <md-sidenav #sidenav align="end" mode="side" opened="true">
+        <md-toolbar color="primary">
+          <span class="header">
+            {{ showChatroomsList ? 'Chatrooms' : 'Users in room' }}
+          </span>
+          <span class="space"></span>
+          <a class="material-icons"
+             [ngClass]="{ 'active-icon': showChatroomsList }"
+             *ngIf="sidenav.opened"
+             (click)="showChatroomsList = !showChatroomsList"
+             mdTooltip="Chatrooms">
+            library_add
+          </a>
+          <a class="material-icons"
+             *ngIf="sidenav.opened"
+             (click)="sidenav.toggle()"
+             mdTooltip="Menu">
+            menu
+          </a>
+        </md-toolbar>
+
+        <app-chatroom-list [list]="roomUsers[selectedRoom.key]" *ngIf="!showChatroomsList"></app-chatroom-list>
+
+        <app-chatroom-room-list [list]="rooms"
+                                [userRooms]="roomList"
+                                *ngIf="showChatroomsList"
+                                (onJoin)="joinToRoom($event)"
+                                (onOpen)="setRoom($event)"
+                                (onLeave)="leftFromRoom($event)"></app-chatroom-room-list>
+
+        <md-toolbar color="primary" class="bottom">
+          <span class="space"></span>
+          <a [mdMenuTriggerFor]="menu" class="material-icons" mdTooltip="Settings">settings</a>
+          <md-menu #menu="mdMenu">
+            <button md-menu-item>Change password</button>
+            <button md-menu-item>Edit profile details</button>
+            <button md-menu-item (click)="changeProfileImageDialogOpen()">Change profile image</button>
+          </md-menu>
+          <a (click)="signout()" class="material-icons" mdTooltip="Logout">power_settings_new</a>
+        </md-toolbar>
+      </md-sidenav>
+
+      <md-toolbar color="primary">
+        <button md-button [mdMenuTriggerFor]="room">
+          Room: {{selectedRoom?.name}}
+          <md-chip-list>
+            <md-chip>
+              <i class="material-icons">person</i>
+              {{roomUsers[selectedRoom?.key]?.length}}
+            </md-chip>
+          </md-chip-list>
+        </button>
+        <md-menu #room="mdMenu">
+          <button md-menu-item *ngFor="let item of roomList" (click)="setRoom(item)">
+            {{item.name}}
+            <md-chip-list>
+            <md-chip>
+              <i class="material-icons">person</i>
+              {{roomUsers[item.key]?.length}}
+            </md-chip>
+            </md-chip-list>
+          </button>
+        </md-menu>
+        <span class="space"></span>
+        <a class="material-icons"
+           [ngClass]="{ 'active-icon': showChatroomsList }"
+           *ngIf="!sidenav.opened"
+           (click)="showChatroomsList = !showChatroomsList;sidenav.toggle()"
+           mdTooltip="Chatrooms">
+          library_add
+        </a>
+        <a class="material-icons" *ngIf="!sidenav.opened" (click)="showChatroomsList = false;sidenav.toggle()" mdTooltip="Menu">menu</a>
+      </md-toolbar>
+      <app-chatroom-messages [list]="roomMessages[selectedRoom.key]"
+                             [users]="roomUsers[selectedRoom.key]"></app-chatroom-messages>
+      <app-message-form (onSend)="sendMessage($event)"></app-message-form>
+    </md-sidenav-container>
+  </md-card>
+</div>

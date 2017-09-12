@@ -1,0 +1,23 @@
+.list {
+  height: calc(100% - 130px);
+  margin: 65px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.space {
+  flex: 1 1 auto;
+}
+
+md-list-item:not(.active) {
+  cursor: pointer;
+  transition: background 0.5s ease;
+}
+
+md-list-item:hover:not(.active) {
+  background: #f5f5f5;
+}
+
+.active {
+  background: #fff9c4;
+}

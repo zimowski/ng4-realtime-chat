@@ -1,0 +1,26 @@
+md-toolbar {
+  position: absolute;
+  bottom: 0;
+}
+
+form {
+  width: 100%;
+}
+
+button {
+  float: right;
+  min-width: inherit;
+}
+
+.input-text-message {
+  background: #ffffff;
+  border: 0;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: .7em;
+  width: 100%;
+}
+
+.input-box {
+  overflow: hidden;
+}

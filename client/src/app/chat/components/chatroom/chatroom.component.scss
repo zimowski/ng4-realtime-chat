@@ -1,0 +1,45 @@
+a {
+  cursor: pointer;
+}
+
+.box {
+  width: calc(100% - 40px);
+  height: calc(100% - 40px);
+  padding: 20px;
+}
+
+md-toolbar {
+  position: absolute;
+  &.bottom {
+    bottom: 0;
+  }
+  .header {
+    font-size: 0.7em;
+  }
+  md-chip-list {
+    display: inline-block;
+    padding: 2px;
+    .material-icons {
+      font-size: 1em;
+    }
+  }
+  a {
+    margin-left: 10px !important;
+  }
+  .active-icon {
+    color: #ffc107;
+  }
+}
+
+md-card {
+  padding: 0;
+  height: 100%;
+}
+
+md-sidenav {
+  min-width: 250px;
+}
+
+.space {
+  flex: 1 1 auto;
+}

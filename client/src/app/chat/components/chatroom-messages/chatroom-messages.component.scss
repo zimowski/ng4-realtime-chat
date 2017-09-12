@@ -1,0 +1,56 @@
+.message {
+  clear: both;
+  padding: 10px;
+  .avatar {
+    width: 40px;
+    height: auto;
+    border-radius: 99px;
+    float: left;
+  }
+  .message-box {
+    margin-left: 50px;
+  }
+  .username {
+    font-size: 0.75em;
+    color: #757575;
+  }
+  p {
+    float: left;
+    max-width: 50%;
+    background: #9e9e9e;
+    padding: 5px;
+    margin: 3px 0;
+    font-size: 0.75em;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+}
+
+.author-message {
+  float: right;
+  max-width: 50%;
+  background: #3f51b5;
+  padding: 5px;
+  font-size: 0.75em;
+  color: #ffffff;
+  border-radius: 10px;
+  margin: 1px 0;
+  margin-right: 5px;
+  clear: both;
+}
+
+.status {
+  background: #bdbdbd;
+  border-radius: 6px;
+  margin-right: 5px !important;
+  &.online {
+    background: #4caf50 !important;
+  }
+}
+
+.chat-window {
+  height: calc(100% - 130px);
+  margin: 65px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

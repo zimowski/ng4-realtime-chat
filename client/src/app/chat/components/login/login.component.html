@@ -1,0 +1,28 @@
+<div class="login-box">
+  <div class="item">
+    <md-card>
+      <md-tab-group>
+        <md-tab>
+          <ng-template md-tab-label>
+            <i class="material-icons">lock</i> Login
+          </ng-template>
+          <form (submit)="submit()" novalidate>
+            <md-form-field>
+              <input mdInput type="text" [(ngModel)]="username" name="username" placeholder="Username">
+            </md-form-field>
+            <md-form-field>
+              <input mdInput type="password" [(ngModel)]="password" name="password" placeholder="Password">
+            </md-form-field>
+            <button md-raised-button color="primary" type="submit">Send</button>
+          </form>
+        </md-tab>
+        <md-tab>
+          <ng-template md-tab-label>
+            <i class="material-icons">person_add</i> Create account
+          </ng-template>
+          <app-signup (onSignup)="loginAfterSignup($event)"></app-signup>
+        </md-tab>
+      </md-tab-group>
+    </md-card>
+  </div>
+</div>

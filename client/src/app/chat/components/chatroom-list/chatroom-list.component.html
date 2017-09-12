@@ -1,0 +1,21 @@
+<div class="list">
+  <md-list *ngIf="list">
+    <md-list-item
+      [@flyInOutAnimation]
+      [ngClass]="{ 'active': item.username === user.username }"
+      *ngFor="let item of list">
+      <img mdListAvatar
+           src="{{apiUrl}}/assets/{{item.image}}"
+           alt="">
+      <p mdLine>
+        <span [ngSwitch]="item.gender">
+          <strong *ngSwitchCase="'M'">&#9792;</strong>
+          <strong *ngSwitchCase="'F'">&#9794;</strong>
+          <strong *ngSwitchDefault></strong>
+        </span>
+        {{item.username}}
+      </p>
+      <p mdLine class="city" *ngIf="item.city">{{item.city}}</p>
+    </md-list-item>
+  </md-list>
+</div>

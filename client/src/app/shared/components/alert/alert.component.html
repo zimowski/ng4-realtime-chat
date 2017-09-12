@@ -1,0 +1,6 @@
+<div *ngIf="alerts.length > 0"
+     style="background: gray; width: 100%; padding: 10px; position: absolute; left: 0; top: 0; text-align: center;">
+  <p *ngFor="let alert of alerts" style="color: red;">
+    {{alert.message}}
+  </p>
+</div>

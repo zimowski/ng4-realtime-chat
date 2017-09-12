@@ -1,0 +1,49 @@
+<md-progress-bar mode="indeterminate" *ngIf="loading"></md-progress-bar>
+
+<form [formGroup]="signupForm" (submit)="signup()">
+  <md-form-field>
+    <input mdInput type="text" formControlName="username" name="username" placeholder="Username">
+    <div mdSuffix>*</div>
+    <md-hint align="start"><strong>Only A-Z . , and space characters</strong></md-hint>
+    <md-hint align="end">{{signupForm.get('username').value.length}} / 30</md-hint>
+  </md-form-field>
+
+  <md-form-field>
+    <input mdInput type="password" formControlName="password" name="password" placeholder="Password">
+    <div mdSuffix>*</div>
+    <md-hint align="start"><strong>Minimum 4 characters</strong></md-hint>
+  </md-form-field>
+
+  <md-form-field>
+    <input mdInput type="password" formControlName="repeat_password" name="repeat_password" placeholder="Repeat password">
+    <div mdSuffix>*</div>
+  </md-form-field>
+
+  <md-select placeholder="Gender" formControlName="gender">
+    <md-option [value]="'M'">
+      Male
+    </md-option>
+    <md-option [value]="'F'">
+      Female
+    </md-option>
+    <md-option [value]="''">
+      Indefinite
+    </md-option>
+  </md-select>
+
+  <md-form-field>
+    <input mdInput type="text" formControlName="city" name="city" placeholder="City">
+    <md-hint align="start"><strong>Only A-Z and space characters</strong></md-hint>
+  </md-form-field>
+
+  <button class="signup-button"
+          md-raised-button
+          color="primary"
+          type="submit"
+          [disabled]="signupForm.invalid || loading"
+  >
+    {{ loading ? 'In progress...' : 'Signup' }}
+  </button>
+</form>
+
+<md-progress-bar mode="indeterminate" *ngIf="loading"></md-progress-bar>

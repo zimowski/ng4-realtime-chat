@@ -1,0 +1,27 @@
+<div #scrollMe [scrollTop]="scrollMe.scrollHeight" class="chat-window">
+  <div *ngIf="list">
+    <div
+      [@flyInOutAnimation]
+      *ngFor="let message of list">
+      <div class="message" *ngIf="user.username !== message.username">
+        <img src="{{apiUrl}}/assets/{{message.username}}.jpg"
+             class="avatar" alt="" />
+        <div class="message-box">
+          <div class="username">
+            <p class="status" [ngClass]="{ 'online': isOnline(message.username) }"></p>
+            {{message.username}}
+          </div>
+          <p mdTooltip="{{ message.date | date: 'dd-MM-y hh:mm:ss' }}"
+             mdTooltipPosition="right">{{message.message}}</p>
+        </div>
+      </div>
+      <div class="author-message"
+           *ngIf="user.username === message.username"
+           mdTooltip="{{ message.date | date: 'dd-MM-y hh:mm:ss' }}"
+           mdTooltipPosition="left">
+        {{message.message}}
+      </div>
+    </div>
+  </div>
+</div>
+
