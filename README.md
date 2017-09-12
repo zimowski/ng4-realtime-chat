@@ -1,5 +1,5 @@
 # Angular 4 real-time chat
-A real-time chat with multiple rooms and user authentication build on websockets.
+A real-time chat with multiple rooms and user authentication. Build on websockets.
 
 ## Example screenshots
 ![demo](https://user-images.githubusercontent.com/23633235/30330761-3c567000-97d6-11e7-9d9e-a9f919f228b4.gif)
@@ -9,10 +9,10 @@ A real-time chat with multiple rooms and user authentication build on websockets
   * [Angular 4](https://angular.io)
   * [Angular Material](https://material.angular.io)
 * Server side
-  * Node.JS
+  * [Node.JS](http://nodejs.org)
   * [ExpressJS](https://github.com/expressjs/express)
   * [Socket.io](https://github.com/socketio/socket.io)
-  * (Json Web Token](https://www.npmjs.com/package/jsonwebtoken)
+  * [Json Web Token](https://www.npmjs.com/package/jsonwebtoken)
   * [MongoDB](https://github.com/mongodb/mongo)
 
 ## Project status
@@ -27,7 +27,7 @@ In progress...
 - [ ] Private messages
 
 ## Installation
-For installation you need Node.JS, MongoDB and Angular CLI.
+Before installation you need Node.JS, MongoDB and Angular CLI.
 
 Remember to run MongoDB.
 
