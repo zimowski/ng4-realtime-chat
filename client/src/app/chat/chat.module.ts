@@ -7,12 +7,12 @@ import {ChatroomComponent} from './components/chatroom/chatroom.component';
 import {SharedModule} from '../shared/shared.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MdButtonModule, MdCardModule, MdChipsModule, MdDialogModule, MdGridListModule, MdInputModule, MdListModule,
-  MdMenuModule, MdProgressBarModule,
-  MdSelectModule,
-  MdSidenavModule, MdSnackBarModule,
-  MdTabsModule,
-  MdToolbarModule, MdTooltipModule
+  MatButtonModule, MatCardModule, MatChipsModule, MatDialogModule, MatGridListModule, MatInputModule, MatListModule,
+  MatMenuModule, MatProgressBarModule,
+  MatSelectModule,
+  MatSidenavModule, MatSnackBarModule,
+  MatTabsModule,
+  MatToolbarModule, MatTooltipModule
 } from '@angular/material';
 import {DialogUploadImageComponent} from '../shared/components/dialog-upload-image/dialog-upload-image.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -29,22 +29,22 @@ import { ChatroomRoomListComponent } from './components/chatroom-room-list/chatr
     SharedModule,
     BrowserAnimationsModule,
     // Angular material
-    MdButtonModule,
-    MdInputModule,
-    MdGridListModule,
-    MdCardModule,
-    MdTabsModule,
-    MdToolbarModule,
-    MdSidenavModule,
-    MdListModule,
-    MdTooltipModule,
-    MdMenuModule,
-    MdDialogModule,
-    MdSnackBarModule,
-    MdSelectModule,
-    MdChipsModule,
-    MdSelectModule,
-    MdProgressBarModule
+    MatButtonModule,
+    MatInputModule,
+    MatGridListModule,
+    MatCardModule,
+    MatTabsModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTooltipModule,
+    MatMenuModule,
+    MatDialogModule,
+    MatSnackBarModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatSelectModule,
+    MatProgressBarModule
   ],
   exports: [
     ChatRoutingModule

@@ -1,12 +1,12 @@
-<h1 md-dialog-title>Set your profile image</h1>
-<div md-dialog-content>
+<h1 mat-dialog-title>Set your profile image</h1>
+<div mat-dialog-content>
     <input type="file" tabindex="1" name="profileImage" ng2FileSelect [uploader]="uploader">
 </div>
-<div md-dialog-actions align="center">
-  <button md-button (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length" tabindex="2">
+<div mat-dialog-actions align="center">
+  <button mat-button (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length" tabindex="2">
     <i class="material-icons">check</i> Save
   </button>
-  <button md-button color="warn" (click)="cancel()" tabindex="-1">
+  <button mat-button color="warn" (click)="cancel()" tabindex="-1">
     <i class="material-icons">clear</i> Cancel
   </button>
 </div>

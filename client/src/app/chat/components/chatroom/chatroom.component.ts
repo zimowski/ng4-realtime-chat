@@ -2,7 +2,7 @@ import {AfterViewInit, Component, HostListener, OnDestroy, OnInit, ViewChild} fr
 import {AuthService} from '../../../shared/services/auth.service';
 import {SocketService} from '../../../shared/services/socket.service';
 import {UserModel} from '../../../shared/models/user.model';
-import {MdDialog, MdSidenav, MdSnackBar} from '@angular/material';
+import {MatDialog, MatSidenav, MatSnackBar, MatMenuModule} from '@angular/material';
 import {DialogUploadImageComponent} from '../../../shared/components/dialog-upload-image/dialog-upload-image.component';
 import {isNull} from 'util';
 import {RoomModel} from '../../../shared/models/room.model';
@@ -19,7 +19,7 @@ import 'rxjs/add/operator/takeWhile';
   styleUrls: ['./chatroom.component.scss']
 })
 export class ChatroomComponent implements OnInit, OnDestroy, AfterViewInit {
-  @ViewChild('sidenav') sidenav: MdSidenav;
+  @ViewChild('sidenav') sidenav: MatSidenav;
   public user: UserModel;
   public rooms: RoomModel[] = [];
   public roomList: RoomModel[] = [];
@@ -38,8 +38,8 @@ export class ChatroomComponent implements OnInit, OnDestroy, AfterViewInit {
 
   constructor(private authService: AuthService,
               private socketService: SocketService,
-              private dialog: MdDialog,
-              private snackBar: MdSnackBar,
+              private dialog: MatDialog,
+              private snackBar: MatSnackBar,
               private appConfig: AppConfigModule) {
     // User data
     this.user = this.authService.tokenPayload();

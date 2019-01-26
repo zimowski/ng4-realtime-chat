@@ -1,5 +1,5 @@
 import {Component, Inject, OnInit} from '@angular/core';
-import { MdDialogRef, MD_DIALOG_DATA } from '@angular/material';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import {UserModel} from '../../models/user.model';
 import {FileUploader} from 'ng2-file-upload/ng2-file-upload';
 
@@ -20,8 +20,8 @@ export class DialogUploadImageComponent implements OnInit {
     ]
   });
 
-  constructor(public dialogRef: MdDialogRef<DialogUploadImageComponent>,
-              @Inject(MD_DIALOG_DATA) public data: UserModel) {
+  constructor(public dialogRef: MatDialogRef<DialogUploadImageComponent>,
+              @Inject(MAT_DIALOG_DATA) public data: UserModel) {
   }
 
   public ngOnInit() {

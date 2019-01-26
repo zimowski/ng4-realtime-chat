@@ -1,17 +1,17 @@
 <div class="list">
-  <md-list>
-    <md-list-item
+  <mat-list>
+    <mat-list-item
       [@flyInOutAnimation]
       *ngFor="let item of list" (click)="open(item)">
       {{item.name}}
       <span class="space"></span>
-      <button md-raised-button
+      <button mat-raised-button
               color="primary"
               *ngIf="item.key !== defaultChatroom.key"
               (click)="isJoined(item) ? leave(item, $event): join(item, $event)">
         {{ (isJoined(item)) ? 'Leave' : 'Join' }}
       </button>
-    </md-list-item>
-  </md-list>
+    </mat-list-item>
+  </mat-list>
 </div>
 

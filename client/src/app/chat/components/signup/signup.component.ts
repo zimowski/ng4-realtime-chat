@@ -2,7 +2,7 @@ import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core'
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../shared/services/auth.service';
 import 'rxjs/add/operator/takeWhile';
-import {MdSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +17,7 @@ export class SignupComponent implements OnInit, OnDestroy {
 
   constructor(private formBuilder: FormBuilder,
               private authService: AuthService,
-              private snackBar: MdSnackBar) { }
+              private snackBar: MatSnackBar) { }
 
   public ngOnInit(): void {
     // Build signup form

@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AuthService} from '../../../shared/services/auth.service';
 import {SocketService} from '../../../shared/services/socket.service';
 import {Router} from '@angular/router';
-import {MdSnackBar} from '@angular/material';
+import {MatSnackBar} from '@angular/material';
 import 'rxjs/add/operator/takeWhile';
 import {AppConfigModule} from '../../../app.config';
 
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   constructor(private authService: AuthService,
               private socketService: SocketService,
               private router: Router,
-              private snackBar: MdSnackBar,
+              private snackBar: MatSnackBar,
               private appConfig: AppConfigModule) { }
 
   // Unsubscribe observables

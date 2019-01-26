@@ -5,7 +5,7 @@ import { SocketService } from './services/socket.service';
 import { AuthService } from './services/auth.service';
 import { AlertComponent } from './components/alert/alert.component';
 import { MessageFormComponent } from './components/message-form/message-form.component';
-import { MdButtonModule, MdDialogModule, MdInputModule, MdToolbarModule } from '@angular/material';
+import { MatButtonModule, MatDialogModule, MatInputModule, MatToolbarModule } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogUploadImageComponent } from './components/dialog-upload-image/dialog-upload-image.component';
@@ -17,10 +17,10 @@ import {flyInOutAnimation} from "./animations/basic.animations";
     CommonModule,
     FormsModule,
     BrowserAnimationsModule,
-    MdToolbarModule,
-    MdInputModule,
-    MdButtonModule,
-    MdDialogModule
+    MatToolbarModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   exports: [
     PageNotFoundComponent,

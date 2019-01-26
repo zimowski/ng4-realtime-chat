@@ -11,17 +11,16 @@
             <p class="status" [ngClass]="{ 'online': isOnline(message.username) }"></p>
             {{message.username}}
           </div>
-          <p mdTooltip="{{ message.date | date: 'dd-MM-y hh:mm:ss' }}"
-             mdTooltipPosition="right">{{message.message}}</p>
+          <p matTooltip="{{ message.date | date: 'dd-MM-y hh:mm:ss' }}"
+             matTooltipPosition="right">{{message.message}}</p>
         </div>
       </div>
       <div class="author-message"
            *ngIf="user.username === message.username"
-           mdTooltip="{{ message.date | date: 'dd-MM-y hh:mm:ss' }}"
-           mdTooltipPosition="left">
+           matTooltip="{{ message.date | date: 'dd-MM-y hh:mm:ss' }}"
+           matTooltipPosition="left">
         {{message.message}}
       </div>
     </div>
   </div>
 </div>
-
